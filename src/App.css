@@ -30,6 +30,8 @@ li {
 }
 .all-article-list{
     display: flex;
+    justify-content: space-around;
+    align-items: center;
     width: 100%;
     flex-wrap: wrap;
     margin-top: 1rem;
@@ -38,11 +40,31 @@ li {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
-    width: 80%;
-    height: auto;
-    margin-bottom: 1rem;
-    padding: 1rem;
+    margin: 1rem;
+    padding: 0.5rem;
+    height: 25rem;
+    border: 1px solid #253C90;
+    box-shadow: 5px 5px 5px #FDD624;
+}
+.all-type-list{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+.type-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 1rem;
+    padding: 0.5rem;
+    height: 18rem;
     border: 1px solid #253C90;
     box-shadow: 5px 5px 5px #FDD624;
 }
@@ -50,4 +72,65 @@ li {
     font-weight: 500;
     color: #253C90;
     text-shadow: 5px 5px 5px #253C90;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+h2 {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #253C90;
+    box-shadow: 5px 5px 5px #FDD624;
+    padding: 0.25rem;
+}
+.all-random-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+    margin: 1rem;
+    border: 1px solid #253C90;
+    box-shadow: 5px 5px 5px #FDD624;
+}
+.random-team {
+    display: flex;
+    justify-content: space-around;
+}
+.random-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    margin: 2rem;
+    height: auto;
+    border: 1px solid #253C90;
+    box-shadow: 5px 5px 5px #FDD624;
+}
+img {
+    height: 3rem;
+    margin: 1rem;
+}
+.card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 2rem;
+}
+.copyright {
+    margin: 1rem;
+    padding: 0.25rem;
+    font-style: italic;
+    font-weight: 300;
+    color: #253C90;
+    box-shadow: 5px 5px 5px white;
+}
+footer {
+    background-color: #FDD624;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
 }

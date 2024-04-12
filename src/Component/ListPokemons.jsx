@@ -21,21 +21,31 @@ const ListPokemons = (() => {
                 {
                 pokemons.map((pokemon) => {
                     return(
-                        <section>
-                            <article className="article-list" key={pokemon.id}>
-                                <p>{pokemon.name}</p>
-                                <Link to={`/PokemonDetailsPage/${pokemon.id}`} className="detail-link">Détail Pokemon</Link>
+                        <section className="article-list">
+                            <h2>{pokemon.name}</h2>
+                                <Link to={`/PokemonDetailsPage/${pokemon.id}`} className="detail-link">Afficher Détail</Link>
+                            <>
                                 {
                                 pokemon.apiTypes.map((type) => {
                                     return (
-                                        <div>
-                                            <p>{type.name}</p>
-                                            <Link to={`/PokemonByTypesPage/${type.name}`} className="detail-link">Détail Type</Link>
-                                        </div>
+                                        <>
+                                            <p>Pokemon de type : {type.name}</p>
+                                            <Link to={`/PokemonByTypesPage/${type.name}`} className="detail-link">Afficher Pokemon du même type</Link>
+                                        </>
                                     )
                                 })
                                 }
-                            </article>
+                                {
+                                pokemon.apiTypes.map((type) => {
+                                    return (
+                                        <>
+                                            <p>Pokemon résistant au type : {type.name}</p>
+                                            <Link to={`/PokemonResistanceByTypePage/${type.name}`} className="detail-link">Afficher Resistance</Link>
+                                        </>
+                                    )
+                                })
+                                }
+                            </>
                         </section>
                     )
                 })

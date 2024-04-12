@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
-const PokemonByTypes = (() => {
+const PokemonResistanceByType = (() => {
 
-    const {type} = useParams();
+    const {typeResistance} = useParams();
 
     const [pokemons, setPokemons] = useState([]);
 
     useEffect(() => {
         window.scrollTo(0, 0)
-        fetch("https://pokebuildapi.fr/api/v1/pokemon/type/" + type)
+        fetch("https://pokebuildapi.fr/api/v1/pokemon/type/resistance/" + typeResistance)
         .then((response) => {
             return response.json();
         })
@@ -17,10 +17,10 @@ const PokemonByTypes = (() => {
             setPokemons(data)
             console.log(data)
         });
-    },[type]) 
+    },[typeResistance]) 
 
     return (
-        <section className="all-type-list">
+<section className="all-type-list">
             {
             pokemons.map((pokemon) => {
                 return (
@@ -29,11 +29,11 @@ const PokemonByTypes = (() => {
                                 <h2>{pokemon.name}</h2>
                                 <Link to={`/PokemonDetailsPage/${pokemon.id}`} className="detail-link">Afficher Détail</Link>
                                 {
-                                pokemon.apiTypes.map((type) => {
+                                pokemon.apiTypes.map((typeResistance) => {
                                     return (
                                         <>
-                                            <p>{type.name}</p>
-                                            <Link to={`/PokemonByTypesPage/${type.name}`} className="detail-link">Afficher Pokemon du même type</Link>
+                                            <p>{typeResistance.name}</p>
+                                            <Link to={`/PokemonResistanceByTypePage/${typeResistance.name}`} className="detail-link">Afficher résistant à ce type</Link>
                                         </>
                                     )
                                 })
@@ -47,4 +47,4 @@ const PokemonByTypes = (() => {
     )
 })
 
-export default PokemonByTypes;
+export default PokemonResistanceByType;
