@@ -27,6 +27,28 @@ const RandomTeam = (() => {
                         <article className="random-card">
                             <h2>{pokemon.name}</h2>
                             <img src={pokemon.image} alt="{pokemon.name}"></img>
+                            <>
+                                {
+                                pokemon.apiTypes.map((type) => {
+                                    return (
+                                        <>
+                                            <p>Pokemon de type : {type.name}</p>
+                                            <Link to={`/PokemonByTypesPage/${type.name}`} className="detail-link">Afficher Pokemon du même type</Link>
+                                        </>
+                                    )
+                                })
+                                }
+                                {
+                                pokemon.apiTypes.map((type) => {
+                                    return (
+                                        <>
+                                            <p>Pokemon résistant au type : {type.name}</p>
+                                            <Link to={`/PokemonResistanceByTypePage/${type.name}`} className="detail-link">Afficher Resistance</Link>
+                                        </>
+                                    )
+                                })
+                                }
+                            </>
                         </article>
                     )
                 })

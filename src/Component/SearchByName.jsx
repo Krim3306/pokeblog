@@ -25,7 +25,7 @@ const SearchByName = (() => {
     }
 
     return (
-        <>
+        <section className="search">
             <form onSubmit={submitPokemon}>
                 <label> 
                     <p>Entrer le nom du Pokémon recherché : </p> 
@@ -35,7 +35,7 @@ const SearchByName = (() => {
             </form>
             {
             !searchedPokemon ? (
-                <p>Ce pokémon n'existe pas</p>
+                <p className="search">Ce pokémon n'existe pas</p>
             ) : (
                 <div>
                     <p>Ce pokémon existe</p>
@@ -61,7 +61,7 @@ const SearchByName = (() => {
                 </div>
             )
             }
-        </>
+        </section>
     )
 })
 
